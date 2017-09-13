@@ -8,3 +8,4 @@ geth ^
   --minerthreads 1 ^
   --verbosity 3 ^
   --rpccorsdomain "*" ^
+  --coinbase 0x5ed005cc68a69B979CB2797BA8CA817722B6e6De

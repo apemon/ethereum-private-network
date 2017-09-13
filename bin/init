@@ -1,3 +1,0 @@
-rm -rf .datadir
-mkdir .datadir
-geth --datadir %datadir% init config/genesis.json

@@ -1,11 +1,6 @@
 # ethereum-private-network
-Instructions on how to setup an ethereum private test network for development.
-This was done with Mac OS X.
-
-Pre-requisities
----------------
-
-* [homebrew](http://brew.sh/)
+Instructions on how to setup an ethereum private test network for development in Windows platform.
+The original is for Mac OS X. You can get it [here](https://github.com/chafey/ethereum-private-network)
 
 Install Geth
 ------------
@@ -13,95 +8,44 @@ Install Geth
 [Geth](https://github.com/ethereum/go-ethereum/wiki/geth) is the command line
 interface for running a full ethereum node implemented in Go.
 
-> brew update
-
-> brew upgrade
-
-> brew tap ethereum/ethereum
-
-> brew install ethereum
+Account Information
+-----------------------------
+1.  address : 0x5ed005cc68a69B979CB2797BA8CA817722B6e6De
+    privateKey : 17d53d74feb5eebb36307a436c1c3bfa7698f68e60d3f627c612008d447a8f23
+    password : Password123
+2.  address : 0xE994bFA2eAdeB1412eB1DDCb967E136b118cA26a
+    privateKey : 68951804259a1739d0933f2e1bf7e1f59c84875775cfbc3f1f8d211d4c7f6dd6
+    password : Password123
+3.  address : 0x4C10289f43d500ba52fDbBafd7d98A171912aAa4
+    privateKey : cf8555588e0151bc31adb94c59c30cab8a5f29453270a6f2e400edf57d757a50
+    password : Password123
+4.  address : 0x75e7eD7374c494E5991D3Fdef66074c2365C82eF
+    privateKey : 0d978b068e64f2e2c65111267039ab198d18ebc8f92bc998738dca3a24f53422
+    password : Password123
+5.  address : 0xb59A1332041DE48E03A01338B9961d48Df2a27A4
+    privateKey : daca3c847e884eb37f8ae1e04a293b64195362551a298ae6b3a6be731e27cba1
+    password : Password123
 
 Initialize local test network
 -----------------------------
 
+You need to set environment variable before run any scripts !!?
+You can set it by run command 
+  set datadir = "Your privatenet chain data"
+
 The first thing you need to do is initialize your ethereum test network:
 
-> bin/init
+> scripts/init.bat
 
 This script will clear/reset your ethereum blockchain and create the following
 accounts:
-
-``` javascript
-[{
-  address: '0x5DFE021F45f00Ae83B0aA963bE44A1310a782fCC',
-  ether: 200000,
-  privateKey: '0xf059416a2f6bb05d0770bbacb24a6430757aa7db5c15959838ed142b486df5b8',
-  hasWallet: true,
-  password: 'iloveethereum',
-  coinbase: true
-},
-{
-  address: '0xFE2b768a23948EDDD7D7Caea55bAa31E39045382',
-  ether: 10,
-  privateKey: '0xb32e083f4ce24956c2989d7e0c57bfd6759b3fa7ba8730c342e12fdf4ba8deb6',
-  hasWallet: true,
-  password: 'iloveethereum'
-},
-{
-  address: '0xA9a418dA22532Bd1189fF8Be5Cdaf3570bF9da43',
-  ether: 20,
-  privateKey: '0x5fb75cc4852a0340e6bb061d039974809d36e6974ff849d3b3586909b65829d8',
-  hasWallet: true,
-  password: 'iloveethereum'
-},{
-  address: '0x9F3A4BBeD4660F2DCCd6E980e2FaA6d6214E5Dc8',
-  ether: 30,
-  privateKey: '0x6ac723a720aa0efa5939a8526ec98dbc1bc6f81146b24fdf9f3e1d09a993c222',
-  hasWallet: true,
-  password: 'iloveethereum'
-},{
-  address: '0xc10261166b4699D3c1535Aa30AC29446c755f065',
-  ether: 40,
-  privateKey: '0x9160633fbdb0bf99f444a3c6018d8a6e4a9a353f0745bb56e43025648118dc27',
-  hasWallet: true,
-  password: 'iloveethereum'
-},{
-  address: '0xe480219e1904de4500Cd8459C74d388457A3f3Ec',
-  ether: 0,
-  privateKey: '0xba774bc82c19dee108f3da59f33aabcec8155f6d102adce371186fec839d50ef',
-  hasWallet: true,
-  password: 'iloveethereum'
-},
-},{
-  address: '0xED7211F84b37B0f62d345462fFeB56b57B787539',
-  ether: 0,
-  privateKey: '0xb34f18662b6d09bc01b2b26e3d325b03f824cb10be8226ad65b1f4cac457eb73',
-  hasWallet: true,
-  password: 'iloveethereum'
-
-},{
-  address: '0xCC52165260FB50dA8Fc9fEd714e33884D324f7Dd',
-  ether: 70,
-  privateKey: '0x1de8d3b032083b477f623d4fc004a120459ed17688aa5311c7fbcf30a21ec0e4',
-  hasWallet: false
-}
-},{
-  address: '0x28c36458566E89b3F9F3D5c1Ba52FDF840072598',
-  ether: 0,
-  privateKey: '0x26fd4b1dbbea7c356b4ae3b32d617fa7df301f3ed26873dcc90cd86862867bcd',
-  hasWallet: false
-}
-```
-
-
-
 
 Start ethereum mining node
 --------------------------
 
 The ethereum network needs a mining node to process transactions:
 
-> bin/mine
+> scripts/mine.bat
 
 The first time you run geth on your machine, it will generate a DAG.  This can
 take several minutes depending upon the speed of your CPU.  Once it finishes
